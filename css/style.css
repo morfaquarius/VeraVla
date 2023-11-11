@@ -223,10 +223,26 @@ body {
   z-index: -1;
 }
 
+.menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 100%;
+          flex: 0 1 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-right: 1.875rem;
+}
+
 .menu__phone {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   gap: 0.75rem;
   font-weight: 450;
   line-height: normal;
@@ -248,11 +264,7 @@ body {
 }
 
 .menu-open .menu__icon_close-burger {
-  display: inline-block;
-  stroke-width: 2px;
-  stroke: #00e0ff;
-  width: 20.586px;
-  height: 20px;
+  display: block;
 }
 
 @media (min-width: 78.75em) {
@@ -290,7 +302,6 @@ body {
     background: linear-gradient(286deg, #0b4d69 3.63%, #104c54 90.98%);
     -webkit-box-shadow: 0px 4px 34px 0px rgba(0, 0, 0, 0.35);
             box-shadow: 0px 4px 34px 0px rgba(0, 0, 0, 0.35);
-    overflow: auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -304,7 +315,7 @@ body {
     top: 0;
   }
 
-  .menu__phone {
+  .menu__list {
     border-top: 1px solid rgba(59, 118, 143, 0.3);
     padding-top: 0.625rem;
   }
@@ -325,12 +336,6 @@ body {
 
   .menu__text {
     font-size: 1.125rem;
-  }
-}
-
-@media (max-width: 29.99875em) and (max-width: 22.5em) {
-  .menu__text {
-    padding-right: 1.544375rem;
   }
 }
 
@@ -398,26 +403,6 @@ body {
 @supports not (font-size: clamp( 1rem , 0.95rem  +  0.2222222222vw , 1.125rem )) {
     .menu__phone {
       font-size: calc(1rem + 0.125 * (100vw - 22.5rem) / 56.25);
-    }
-}
-}
-
-@media (max-width: 29.99875em) and (min-width: 29.99875em) {
-  .menu__text {
-    padding-right: 8.5625rem;
-  }
-}
-
-@media (max-width: 29.99875em) and (min-width: 22.5em) and (max-width: 29.99875em) {
-@supports (padding-right: clamp( 1.544375rem , -19.5135096474rem  +  93.5905984331vw , 8.5625rem )) {
-    .menu__text {
-      padding-right: clamp( 1.544375rem , -19.5135096474rem  +  93.5905984331vw , 8.5625rem );
-    }
-}
-
-@supports not (padding-right: clamp( 1.544375rem , -19.5135096474rem  +  93.5905984331vw , 8.5625rem )) {
-    .menu__text {
-      padding-right: calc(1.544375rem + 7.018125 * (100vw - 22.5rem) / 7.49875);
     }
 }
 }
