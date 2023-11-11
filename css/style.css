@@ -3,7 +3,7 @@
 @font-face {
   font-family: AvenirNextCyr;
   font-display: swap;
-  src: url("../fonts/AvenirNextCyr-Heavy.woff") format("woff");
+  src: url("../fonts/AvenirNextCyr-Heavy.woff2") format("woff2"), url("../fonts/AvenirNextCyr-Heavy.woff") format("woff");
   font-weight: 900;
   font-style: normal;
 }
@@ -11,7 +11,7 @@
 @font-face {
   font-family: AvenirNextCyr;
   font-display: swap;
-  src: url("../fonts/AvenirNextCyr-Medium.woff") format("woff");
+  src: url("../fonts/AvenirNextCyr-Medium.woff2") format("woff2"), url("../fonts/AvenirNextCyr-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
 }
@@ -19,7 +19,7 @@
 @font-face {
   font-family: AvenirNextCyr;
   font-display: swap;
-  src: url("../fonts/AvenirNextCyr-Demi.woff") format("woff");
+  src: url("../fonts/AvenirNextCyr-Demi.woff2") format("woff2"), url("../fonts/AvenirNextCyr-Demi.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -27,7 +27,7 @@
 @font-face {
   font-family: AvenirNextCyr;
   font-display: swap;
-  src: url("../fonts/AvenirNextCyr-Bold.woff") format("woff");
+  src: url("../fonts/AvenirNextCyr-Bold.woff2") format("woff2"), url("../fonts/AvenirNextCyr-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
@@ -149,24 +149,24 @@ h6 {
   padding: 0 1.875rem;
 }
 
-[class*=-ibg] {
+/*
+[class*="-ibg"] {
   position: relative;
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
 }
-
-[class*=-ibg] img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  -o-object-fit: cover;
-     object-fit: cover;
+[class*="-ibg--contain"] {
+  img {
+    object-fit: contain;
+  }
 }
-
-[class*=-ibg--contain] img {
-  -o-object-fit: contain;
-     object-fit: contain;
-}
+*/
 
 body {
   background: linear-gradient(286deg, #022335 3.63%, #043a41 90.98%);
@@ -309,17 +309,18 @@ body {
     padding-top: 0.625rem;
   }
 
+  .menu__icon_default {
+    width: 2.035625rem;
+    height: 1.92625rem;
+  }
+
+  .menu-open .menu__icon_default {
+    display: none;
+  }
+
   .menu-open .menu__icon_open-burger {
     width: 37px;
     height: 35px;
-  }
-
-  .menu__icon {
-    width: 37px;
-  }
-
-  .menu-open .menu__icon {
-    display: none;
   }
 
   .menu__text {
@@ -403,20 +404,20 @@ body {
 
 @media (max-width: 29.99875em) and (min-width: 29.99875em) {
   .menu__text {
-    padding-right: 8.1290625rem;
+    padding-right: 8.5625rem;
   }
 }
 
 @media (max-width: 29.99875em) and (min-width: 22.5em) and (max-width: 29.99875em) {
-@supports (padding-right: clamp( 1.544375rem , -18.2129803926rem  +  87.8104684114vw , 8.1290625rem )) {
+@supports (padding-right: clamp( 1.544375rem , -19.5135096474rem  +  93.5905984331vw , 8.5625rem )) {
     .menu__text {
-      padding-right: clamp( 1.544375rem , -18.2129803926rem  +  87.8104684114vw , 8.1290625rem );
+      padding-right: clamp( 1.544375rem , -19.5135096474rem  +  93.5905984331vw , 8.5625rem );
     }
 }
 
-@supports not (padding-right: clamp( 1.544375rem , -18.2129803926rem  +  87.8104684114vw , 8.1290625rem )) {
+@supports not (padding-right: clamp( 1.544375rem , -19.5135096474rem  +  93.5905984331vw , 8.5625rem )) {
     .menu__text {
-      padding-right: calc(1.544375rem + 6.5846875 * (100vw - 22.5rem) / 7.49875);
+      padding-right: calc(1.544375rem + 7.018125 * (100vw - 22.5rem) / 7.49875);
     }
 }
 }
