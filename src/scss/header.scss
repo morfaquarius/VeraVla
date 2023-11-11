@@ -80,10 +80,13 @@
     }
   }
   &__icon {
-    @media (max-width: $mobileSmall) {
-      width: 37px;
-      .menu-open & {
-        display: none;
+    &_default {
+      @media (max-width: $mobileSmall) {
+        width: toRem(32.57);
+        height: toRem(30.82);
+        .menu-open & {
+          display: none;
+        }
       }
     }
     &_open-burger {
@@ -110,7 +113,7 @@
   &__text {
     @media (max-width: $mobileSmall) {
       font-size: toRem(18);
-      @include adaptiveValue("padding-right", 130.065, 24.71, 0, 479.98, 360);
+      @include adaptiveValue("padding-right", 137, 24.71, 0, 479.98, 360);
     }
   }
 }
