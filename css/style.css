@@ -3,7 +3,7 @@
 @font-face {
   font-family: AvenirNextCyr;
   font-display: swap;
-  src: url("../fonts/AvenirNextCyr-Heavy.woff2") format("woff2"), url("../fonts/AvenirNextCyr-Heavy.woff") format("woff");
+  src: url("../fonts/AvenirNextCyr-Heavy.woff") format("woff");
   font-weight: 900;
   font-style: normal;
 }
@@ -11,7 +11,7 @@
 @font-face {
   font-family: AvenirNextCyr;
   font-display: swap;
-  src: url("../fonts/AvenirNextCyr-Medium.woff2") format("woff2"), url("../fonts/AvenirNextCyr-Medium.woff") format("woff");
+  src: url("../fonts/AvenirNextCyr-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
 }
@@ -19,7 +19,7 @@
 @font-face {
   font-family: AvenirNextCyr;
   font-display: swap;
-  src: url("../fonts/AvenirNextCyr-Demi.woff2") format("woff2"), url("../fonts/AvenirNextCyr-Demi.woff") format("woff");
+  src: url("../fonts/AvenirNextCyr-Demi.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -27,7 +27,7 @@
 @font-face {
   font-family: AvenirNextCyr;
   font-display: swap;
-  src: url("../fonts/AvenirNextCyr-Bold.woff2") format("woff2"), url("../fonts/AvenirNextCyr-Bold.woff") format("woff");
+  src: url("../fonts/AvenirNextCyr-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
@@ -309,17 +309,17 @@ body {
     padding-top: 0.625rem;
   }
 
+  .menu-open .menu__icon_open-burger {
+    width: 37px;
+    height: 35px;
+  }
+
   .menu__icon {
     width: 37px;
   }
 
   .menu-open .menu__icon {
     display: none;
-  }
-
-  .menu-open .menu__icon_open-burger {
-    width: 37px;
-    height: 35px;
   }
 
   .menu__text {
