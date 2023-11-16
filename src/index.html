@@ -8,6 +8,42 @@
   <div class="wrapper">
     @@include('html/_header.htm',{})
     <main class="page">
+      <section class="welcome">
+        <div class="welcome__container_wide">
+          <div class="welcome__container">
+            <div class="welcome__content content">
+              <div class="content__header">
+                <p class="content__subtitle">
+                  Добро пожаловать в онлайн школу
+                </p>
+                <h1 class="content__title">VeraVla edu!</h1>
+                <p class="content__text">
+                  Переквалифицируйся в разработчика искусственного интеллекта и получи высокооплачиваемую работу
+                </p>
+              </div>
+              <div class="content__info info">
+                <img class="info__icon" src="@img/icons/certificate.svg" alt="">
+                <div class="info__text">
+                  <p>Мы обучаем с гарантией! </p>
+                  <p>Первый месяц действует гарантия 100% возврата
+                    денег, если тебя не устроят наши курсы</p>
+                </div>
+              </div>
+              <button type="button" class="content__button button">Записаться на ознакомительный вебинар</button>
+            </div>
+            <div class="welcome__image">
+              <img src="@img/welcome/01.png" alt="neuron">
+            </div>
+            <button data-goto="" type="button" class="welcome__scroll scroll">
+              <p>Листайте вниз</p>
+
+            </button>
+          </div>
+          <button type="button" class="welcome__consultation">
+            <p>Бесплатная консультация</p>
+          </button>
+        </div>
+      </section>
     </main>
     @@include('html/_footer.htm',{})
   </div>
