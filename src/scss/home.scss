@@ -80,7 +80,9 @@
 
 .content {
   display: grid;
-  justify-items: start;
+  & > * {
+    justify-self: start;
+  }
   &__header {
     &:not(:last-child) {
       margin-bottom: toRem(80);
