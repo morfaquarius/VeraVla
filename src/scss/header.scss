@@ -1,5 +1,9 @@
 //====================================================================================================
 .header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
   &__container {
     position: relative;
     @include adaptiveValue("padding-top", 46, 24);
@@ -11,20 +15,21 @@
   }
   &__logo {
     position: relative;
-    &::after {
-      content: "";
-      width: 438px;
-      height: 438px;
-      border-radius: 438px;
-      opacity: 0.16;
-      background: #00e0ff;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-60%, -60%);
-      filter: blur(123.5px);
-      z-index: -1;
-    }
+    // &::after {
+    //   content: "";
+    //   width: 438px;
+    //   height: 438px;
+    //   border-radius: 438px;
+    //   opacity: 0.16;
+    //   background: #00e0ff;
+    //   filter: blur(123.5px);
+
+    //   position: absolute;
+    //   top: 50%;
+    //   left: 50%;
+    //   transform: translate(-60%, -60%);
+    //   z-index: -1;
+    // }
     img {
       @include adaptiveValue("width", 287, 195);
     }
@@ -36,13 +41,15 @@
     transform: translate(50%, 0);
     mix-blend-mode: lighten;
     box-shadow: 58px 4px 191px 47px #000 inset;
-    z-index: -1;
-    @media (max-width: $mobileSmall) {
+    z-index: 0;
+    @media (max-width: em(696)) {
       display: none;
     }
   }
 }
 .menu {
+  position: relative;
+  z-index: 50;
   &__body {
     @media (max-width: $mobileSmall) {
       position: fixed;
@@ -63,14 +70,16 @@
     }
   }
   &__list {
-    display: flex;
-    align-items: center;
-    flex: 0 1 100%;
-    justify-content: space-between;
-    padding-right: toRem(30);
-    @media (max-width: $mobileSmall) {
-      border-top: 1px solid rgb(59, 118, 143, 0.3);
-      padding-top: toRem(10);
+    .menu-open & {
+      display: flex;
+      align-items: center;
+      flex: 0 1 100%;
+      justify-content: space-between;
+      padding-right: toRem(30);
+      @media (max-width: $mobileSmall) {
+        border-top: 1px solid rgb(59, 118, 143, 0.3);
+        padding-top: toRem(10);
+      }
     }
   }
   &__item {
@@ -78,9 +87,6 @@
   &__phone {
     display: flex;
     gap: toRem(12);
-    font-weight: 450;
-    line-height: normal;
-    @include adaptiveValue("font-size", 18, 16);
     align-items: center;
   }
   &__icon {
@@ -111,6 +117,7 @@
     }
   }
   &__text {
+    @include adaptiveValue("font-size", 18, 16);
     @media (max-width: $mobileSmall) {
       font-size: toRem(18);
     }
