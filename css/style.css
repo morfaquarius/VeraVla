@@ -216,13 +216,29 @@ h6 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-column-gap: 15px;
-     -moz-column-gap: 15px;
-          column-gap: 15px;
 }
 
 .header__logo {
   position: relative;
+  z-index: 10;
+}
+
+.header__logo::after {
+  content: "";
+  width: 438px;
+  height: 438px;
+  border-radius: 438px;
+  opacity: 0.16;
+  background: #00e0ff;
+  -webkit-filter: blur(123.5px);
+          filter: blur(123.5px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-60%, -70%);
+      -ms-transform: translate(-60%, -70%);
+          transform: translate(-60%, -70%);
+  z-index: -1;
 }
 
 .header__decor {
@@ -232,10 +248,13 @@ h6 {
   -webkit-transform: translate(50%, 0);
       -ms-transform: translate(50%, 0);
           transform: translate(50%, 0);
+  -webkit-column-gap: 15px;
+     -moz-column-gap: 15px;
+          column-gap: 15px;
+  z-index: 50;
   mix-blend-mode: lighten;
   -webkit-box-shadow: 58px 4px 191px 47px #000 inset;
           box-shadow: 58px 4px 191px 47px #000 inset;
-  z-index: 0;
 }
 
 .menu {
@@ -285,6 +304,23 @@ h6 {
   display: block;
 }
 
+.welcome {
+  position: relative;
+}
+
+.no-webp .welcome::before{
+  background: url("../img/welcome/decor.png") 0 0 no-repeat; }
+
+.welcome::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -899px;
+  width: 1211px;
+  height: 356px;
+  mix-blend-mode: lighten;
+}
+
 .welcome__container {
   padding-top: 17.9375rem;
   padding-bottom: 11.0625rem;
@@ -315,7 +351,68 @@ h6 {
 
 .welcome__scroll {
   position: absolute;
-  display: none;
+  left: 50%;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  white-space: nowrap;
+  gap: 32px;
+}
+
+.welcome__scroll p {
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+  -webkit-transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+  color: #747d81;
+  font-size: 0.625rem;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 3.6px;
+  text-transform: uppercase;
+}
+
+.welcome__scroll div {
+  border-radius: 60px;
+  border: 1px solid #4a8bec;
+  width: 20px;
+  height: 37px;
+  background: rgba(196, 196, 196, 0);
+  position: relative;
+  padding: 6px 5px;
+}
+
+.welcome__scroll div::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+      -ms-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+  width: 10px;
+  height: 10px;
+  background-color: #4abcec;
+  -webkit-box-shadow: 0px 4px 10px rgba(74, 217, 236, 0.75);
+          box-shadow: 0px 4px 10px rgba(74, 217, 236, 0.75);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.welcome__scroll:active div::after {
+  -webkit-transform: translate(-50%, 130%);
+      -ms-transform: translate(-50%, 130%);
+          transform: translate(-50%, 130%);
 }
 
 .welcome__consultation {
@@ -606,3 +703,5 @@ h6 {
     }
 }
 }
+
+.webp .welcome::before{ background: url(../img/welcome/decor.webp) 0 0 no-repeat; }
