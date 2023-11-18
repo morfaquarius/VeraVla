@@ -1,6 +1,17 @@
 //====================================================================================================
 .welcome {
   @extend %bg-primary1;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -899px;
+    width: 1211px;
+    height: 356px;
+    mix-blend-mode: lighten;
+    background: url("@img/welcome/decor.png") 0 0 no-repeat;
+  }
   &__container {
     padding-top: toRem(287);
     padding-bottom: toRem(177);
@@ -26,7 +37,51 @@
   }
   &__scroll {
     position: absolute;
-    display: none;
+    left: 50%;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    white-space: nowrap;
+    gap: 32px;
+    p {
+      writing-mode: vertical-lr;
+      transform: rotate(-180deg);
+      color: #747d81;
+      font-size: toRem(10);
+      font-weight: 600;
+      line-height: normal;
+      letter-spacing: 3.6px;
+      text-transform: uppercase;
+    }
+    div {
+      border-radius: 60px;
+      border: 1px solid #4a8bec;
+      width: 20px;
+      height: 37px;
+      background: rgba(196, 196, 196, 0);
+      position: relative;
+      padding: 6px 5px;
+      &::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        width: 10px;
+        height: 10px;
+        background-color: #4abcec;
+        box-shadow: (0px 4px 10px rgba(74, 217, 236, 0.75));
+        transition: all 0.5s;
+      }
+    }
+    &:active {
+      div {
+        &::after {
+          transform: translate(-50%, 130%);
+        }
+      }
+    }
   }
   &__consultation {
     position: absolute;
@@ -131,8 +186,6 @@
   }
 }
 .button {
-}
-.scroll {
 }
 
 //====================================================================================================
