@@ -6,6 +6,7 @@
 
 <body>
   <div class="wrapper">
+    @@include('html/_popup.htm',{})
     @@include('html/_header.htm',{})
     <main class="page">
       <section class="welcome">
@@ -29,7 +30,8 @@
                     денег, если тебя не устроят наши курсы</p>
                 </div>
               </div>
-              <button data-da=".welcome__container, 991.98" type="button" class="content__button button">Записаться на
+              <button data-popup="#popupSignup" data-da=".welcome__container, 991.98" type="button"
+                class="content__button button">Записаться на
                 ознакомительный вебинар</button>
             </div>
             <div class="welcome__image">
@@ -40,12 +42,18 @@
               <div></div>
             </button>
           </div>
-          <button type="button" class="welcome__consultation consultation">
+          <button data-popup="#popupSignup" type="button" class="welcome__consultation consultation">
             <p>Бесплатная консультация</p>
             <div class="consultation__img"><img src="@img/icons/consul.svg" alt="consultation"></div>
           </button>
         </div>
       </section>
+      <!-- <section class="reason">
+        <div class="reason__container">
+          <h2 class="reason__title title"><span>7 причин</span> почему именно мы?</h2>
+
+        </div>
+      </section> -->
     </main>
     @@include('html/_footer.htm',{})
   </div>

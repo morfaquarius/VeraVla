@@ -1,11 +1,9 @@
 //<FORM>
 // Сниппет (HTML):
 .form {
-  &__row {
-  }
-  &__column {
-  }
   &__line {
+  }
+  &__label {
   }
   &__input {
   }
@@ -22,7 +20,7 @@
 
 // <INPUTS>
 // Сниппет (HTML): inp
-// @import "input";
+@import "input";
 
 // <CHECK>
 // Сниппет (HTML): chk
@@ -50,4 +48,4 @@
 
 // <CALENDAR>
 // Сниппет (HTML):
-// @import "datepicker";
+@import "datepicker";
