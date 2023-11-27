@@ -158,6 +158,28 @@ h6 {
   position: relative;
 }
 
+.form__line:not(:last-child) {
+  margin-bottom: 1.25rem;
+}
+
+.form__label {
+  color: #00e0ff;
+  font-size: 0.8125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 1.3px;
+  display: block;
+}
+
+.form__label:not(:last-child) {
+  margin-bottom: 0.625rem;
+}
+
+.form__button {
+  margin-top: 2.8125rem;
+}
+
 .button {
   padding: 23.5px 13px;
   border-radius: 9px;
@@ -174,7 +196,7 @@ h6 {
   z-index: 1;
 }
 
-.button--fw {
+.button_fw {
   width: 100%;
 }
 
@@ -188,11 +210,38 @@ textarea {
 }
 
 .input {
-  border-radius: 0 !important;
+  border-radius: 9px !important;
   width: 100%;
   display: block;
-  padding: 0px 20px;
-  border: 1px solid #eee;
+  padding: 18.5px 20px;
+  border: 2px solid #49b9e8;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 224, 255, 0.11)), to(rgba(0, 224, 255, 0.05)));
+  background: linear-gradient(180deg, rgba(0, 224, 255, 0.11) 0%, rgba(0, 224, 255, 0.05) 100%);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 1.5px;
+}
+
+.input::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.input::-moz-placeholder {
+  color: #fff;
+}
+
+.input:-ms-input-placeholder {
+  color: #fff;
+}
+
+.input::-ms-input-placeholder {
+  color: #fff;
+}
+
+.input::placeholder {
+  color: #fff;
 }
 
 .input[placeholder]:not([data-placeholder-nohiden])::-webkit-input-placeholder {
@@ -265,24 +314,10 @@ textarea.input {
   -ms-user-select: none;
   user-select: none;
   overflow: hidden;
-  background: #000;
+  background: linear-gradient(286deg, rgb(2, 35, 53) 3.63%, rgb(12, 55, 61) 90.98%);
   -webkit-box-shadow: 0 1.25em 1.25em -0.9375em rgba(0, 0, 0, 0.3);
   box-shadow: 0 1.25em 1.25em -0.9375em rgba(0, 0, 0, 0.3);
-  border-right: 1px solid #fff;
-  border-left: 1px solid #f1ad70;
   padding: 5px;
-}
-
-.qs-datepicker-container:before,
-.qs-datepicker-container:after {
-  content: "";
-  width: 100%;
-  height: 2px;
-  left: 0;
-  z-index: 2;
-  position: absolute;
-  background-image: -webkit-gradient(linear, left top, right top, from(#f1ad70), to(#fffdf2));
-  background-image: linear-gradient(to right, #f1ad70 0%, #fffdf2 100%);
 }
 
 .qs-datepicker-container:before {
@@ -610,7 +645,7 @@ textarea.input {
 }
 
 .qs-datepicker .qs-square:not(.qs-empty):not(.qs-disabled):not(.qs-day):not(.qs-active):hover {
-  background: orange;
+  background: #4abcec;
 }
 
 .qs-datepicker .qs-event {
@@ -665,6 +700,14 @@ body::after {
   pointer-events: none;
 }
 
+.popup__title:not(:last-child) {
+  margin-bottom: 1.4375rem;
+}
+
+.popup__close {
+  position: absolute;
+}
+
 .popup_show {
   z-index: 150;
   visibility: visible;
@@ -715,7 +758,7 @@ body::after {
   -webkit-box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.53);
           box-shadow: 0px 20px 50px 0px rgba(0, 0, 0, 0.53);
   width: 100%;
-  max-width: 900px;
+  max-width: 590px;
   border-radius: 20px;
 }
 
@@ -744,6 +787,23 @@ body::after {
 
 .welcome {
   background: linear-gradient(286deg, #022335 3.63%, #043a41 90.98%);
+}
+
+.title {
+  font-size: 3.375rem;
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.title span {
+  color: #4abcec;
+}
+
+.title_popup {
+  font-size: 2.0625rem;
 }
 
 .header {
