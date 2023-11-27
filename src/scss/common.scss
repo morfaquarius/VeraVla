@@ -1,1 +1,15 @@
 // Заголовки, общие БЭМ блоки и прочее...
+.title {
+  font-size: toRem(54);
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+  text-transform: uppercase;
+  color: #fff;
+  span {
+    color: #4abcec;
+  }
+  &_popup {
+    font-size: toRem(33);
+  }
+}

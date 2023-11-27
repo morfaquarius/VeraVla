@@ -2,12 +2,27 @@
 // Сниппет (HTML):
 .form {
   &__line {
+    &:not(:last-child) {
+      margin-bottom: toRem(20);
+    }
   }
   &__label {
+    color: #00e0ff;
+    font-size: toRem(13);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 1.3px;
+    display: block;
+
+    &:not(:last-child) {
+      margin-bottom: toRem(10);
+    }
   }
   &__input {
   }
   &__button {
+    margin-top: toRem(45);
   }
   &__error {
   }

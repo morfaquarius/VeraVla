@@ -24,6 +24,14 @@ body::after {
   transition: visibility 0.8s ease 0s;
   visibility: hidden;
   pointer-events: none;
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: toRem(23);
+    }
+  }
+  &__close {
+    position: absolute;
+  }
 }
 .popup_show {
   z-index: 150;
@@ -57,7 +65,7 @@ body::after {
   @include adaptiveValue("padding-top", 59.5, 38.5);
   @include adaptiveValue("padding-bottom", 59.5, 38.5);
   width: 100%;
-  max-width: 900px;
+  max-width: 590px;
   border-radius: 20px;
   .lock & {
     visibility: visible;

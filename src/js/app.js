@@ -112,7 +112,7 @@ autoHeight: false
 
 /* Отправка формы */
 /* Документация: https://template.fls.guru/template-docs/rabota-s-formami.html */
-// flsForms.formSubmit();
+flsForms.formSubmit();
 
 /* Модуль формы "количество" */
 // flsForms.formQuantity();
