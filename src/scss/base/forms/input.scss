@@ -13,13 +13,23 @@ textarea {
   width: 100%;
   display: block;
   padding: 18.5px 20px;
-  border: 2px solid #49b9e8;
   background: linear-gradient(180deg, rgba(0, 224, 255, 0.11) 0%, rgba(0, 224, 255, 0.05) 100%);
   color: #fff;
   font-size: 15px;
   font-weight: 500;
   line-height: normal;
   letter-spacing: 1.5px;
+  border: 2px solid;
+  border-image: linear-gradient(to right, transparent, #0f6b78, transparent) 1 1;
+  border-image-slice: 1;
+  &__icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translate(0, -50%);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
   &::placeholder {
     color: #fff;
   }

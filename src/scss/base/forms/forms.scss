@@ -5,6 +5,14 @@
     &:not(:last-child) {
       margin-bottom: toRem(20);
     }
+    &_datepicker {
+      position: relative;
+    }
+    &._form-focus {
+      .input__icon {
+        transform: translate(0, -50%) rotate(-180deg);
+      }
+    }
   }
   &__label {
     color: #00e0ff;
@@ -21,8 +29,9 @@
   }
   &__input {
   }
+
   &__button {
-    margin-top: toRem(45);
+    @include adaptiveValue("margin-top", 45, 33);
   }
   &__error {
   }

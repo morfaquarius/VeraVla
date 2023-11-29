@@ -20,7 +20,7 @@ body::after {
   left: 0;
   bottom: 0;
   right: 0;
-  padding: 30px 10px;
+  padding: 30px 30px;
   transition: visibility 0.8s ease 0s;
   visibility: hidden;
   pointer-events: none;
@@ -31,6 +31,10 @@ body::after {
   }
   &__close {
     position: absolute;
+    right: -21px;
+    top: -21px;
+    width: 18px;
+    height: 18px;
   }
 }
 .popup_show {
