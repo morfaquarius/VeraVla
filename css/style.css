@@ -162,6 +162,16 @@ h6 {
   margin-bottom: 1.25rem;
 }
 
+.form__line_datepicker {
+  position: relative;
+}
+
+.form__line._form-focus .input__icon {
+  -webkit-transform: translate(0, -50%) rotate(-180deg);
+      -ms-transform: translate(0, -50%) rotate(-180deg);
+          transform: translate(0, -50%) rotate(-180deg);
+}
+
 .form__label {
   color: #00e0ff;
   font-size: 0.8125rem;
@@ -174,10 +184,6 @@ h6 {
 
 .form__label:not(:last-child) {
   margin-bottom: 0.625rem;
-}
-
-.form__button {
-  margin-top: 2.8125rem;
 }
 
 .button {
@@ -214,7 +220,6 @@ textarea {
   width: 100%;
   display: block;
   padding: 18.5px 20px;
-  border: 2px solid #49b9e8;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 224, 255, 0.11)), to(rgba(0, 224, 255, 0.05)));
   background: linear-gradient(180deg, rgba(0, 224, 255, 0.11) 0%, rgba(0, 224, 255, 0.05) 100%);
   color: #fff;
@@ -222,6 +227,23 @@ textarea {
   font-weight: 500;
   line-height: normal;
   letter-spacing: 1.5px;
+  border: 2px solid;
+  -o-border-image: linear-gradient(to right, transparent, #0f6b78, transparent) 1 1;
+     border-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(#0f6b78), to(transparent)) 1 1;
+     border-image: linear-gradient(to right, transparent, #0f6b78, transparent) 1 1;
+  border-image-slice: 1;
+}
+
+.input__icon {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .input::-webkit-input-placeholder {
@@ -693,7 +715,7 @@ body::after {
   left: 0;
   bottom: 0;
   right: 0;
-  padding: 30px 10px;
+  padding: 30px 30px;
   -webkit-transition: visibility 0.8s ease 0s;
   transition: visibility 0.8s ease 0s;
   visibility: hidden;
@@ -706,6 +728,10 @@ body::after {
 
 .popup__close {
   position: absolute;
+  right: -21px;
+  top: -21px;
+  width: 18px;
+  height: 18px;
 }
 
 .popup_show {
@@ -802,10 +828,6 @@ body::after {
   color: #4abcec;
 }
 
-.title_popup {
-  font-size: 2.0625rem;
-}
-
 .header {
   position: absolute;
   width: 100%;
@@ -890,6 +912,20 @@ body::after {
 
 .welcome {
   position: relative;
+}
+
+.welcome__decor {
+  background: -webkit-gradient(linear, right top, left top, from(rgba(74, 207, 236, 0.21)), color-stop(53.12%, #32abc3), to(rgba(74, 197, 236, 0.23)));
+  background: linear-gradient(270deg, rgba(74, 207, 236, 0.21) 0%, #32abc3 53.12%, rgba(74, 197, 236, 0.23) 100%);
+  -webkit-box-shadow: 0px 0px 24px 0px #00e0ff, 0px 4px 15px 0px #4ad9ec, 0px 3px 15px 0px rgba(0, 224, 255, 0.93);
+          box-shadow: 0px 0px 24px 0px #00e0ff, 0px 4px 15px 0px #4ad9ec, 0px 3px 15px 0px rgba(0, 224, 255, 0.93);
+  -webkit-filter: blur(1px);
+          filter: blur(1px);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
 }
 
 .no-webp .welcome::before{
@@ -1203,6 +1239,10 @@ body::after {
 }
 
 @media (min-width: 78.75em) {
+  .form__button {
+    margin-top: 2.8125rem;
+  }
+
   .popup__content {
     padding-left: 5.0625rem;
   }
@@ -1217,6 +1257,10 @@ body::after {
 
   .popup__content {
     padding-bottom: 3.71875rem;
+  }
+
+  .title_popup {
+    font-size: 2.0625rem;
   }
 
   .header__container {
@@ -1236,7 +1280,7 @@ body::after {
   }
 
   .welcome__container {
-    padding-top: 17.9375rem;
+    padding-top: 17.875rem;
   }
 
   .welcome__container {
@@ -1314,10 +1358,6 @@ body::after {
 }
 
 @media (max-width: 47.99875em) {
-  .button {
-    padding: 11px 13px;
-  }
-
   .welcome__consultation {
     top: 55%;
     right: 40px;
@@ -1409,6 +1449,10 @@ body::after {
 }
 
 @media (max-width: 22.5em) {
+  .form__button {
+    margin-top: 2.0625rem;
+  }
+
   .popup__content {
     padding-left: 1.71875rem;
   }
@@ -1423,6 +1467,10 @@ body::after {
 
   .popup__content {
     padding-bottom: 2.40625rem;
+  }
+
+  .title_popup {
+    font-size: 1.375rem;
   }
 
   .header__container {
@@ -1485,6 +1533,18 @@ body::after {
 }
 
 @media (min-width: 22.5em) and (max-width: 78.75em) {
+@supports (margin-top: clamp( 2.0625rem , 1.7625rem  +  1.3333333333vw , 2.8125rem )) {
+    .form__button {
+      margin-top: clamp( 2.0625rem , 1.7625rem  +  1.3333333333vw , 2.8125rem );
+    }
+}
+
+@supports not (margin-top: clamp( 2.0625rem , 1.7625rem  +  1.3333333333vw , 2.8125rem )) {
+    .form__button {
+      margin-top: calc(2.0625rem + 0.75 * (100vw - 22.5rem) / 56.25);
+    }
+}
+
 @supports (padding-left: clamp( 1.71875rem , 0.38125rem  +  5.9444444444vw , 5.0625rem )) {
     .popup__content {
       padding-left: clamp( 1.71875rem , 0.38125rem  +  5.9444444444vw , 5.0625rem );
@@ -1530,6 +1590,18 @@ body::after {
 @supports not (padding-bottom: clamp( 2.40625rem , 1.88125rem  +  2.3333333333vw , 3.71875rem )) {
     .popup__content {
       padding-bottom: calc(2.40625rem + 1.3125 * (100vw - 22.5rem) / 56.25);
+    }
+}
+
+@supports (font-size: clamp( 1.375rem , 1.1rem  +  1.2222222222vw , 2.0625rem )) {
+    .title_popup {
+      font-size: clamp( 1.375rem , 1.1rem  +  1.2222222222vw , 2.0625rem );
+    }
+}
+
+@supports not (font-size: clamp( 1.375rem , 1.1rem  +  1.2222222222vw , 2.0625rem )) {
+    .title_popup {
+      font-size: calc(1.375rem + 0.6875 * (100vw - 22.5rem) / 56.25);
     }
 }
 
@@ -1581,15 +1653,15 @@ body::after {
     }
 }
 
-@supports (padding-top: clamp( 8.875rem , 5.25rem  +  16.1111111111vw , 17.9375rem )) {
+@supports (padding-top: clamp( 8.875rem , 5.275rem  +  16vw , 17.875rem )) {
     .welcome__container {
-      padding-top: clamp( 8.875rem , 5.25rem  +  16.1111111111vw , 17.9375rem );
+      padding-top: clamp( 8.875rem , 5.275rem  +  16vw , 17.875rem );
     }
 }
 
-@supports not (padding-top: clamp( 8.875rem , 5.25rem  +  16.1111111111vw , 17.9375rem )) {
+@supports not (padding-top: clamp( 8.875rem , 5.275rem  +  16vw , 17.875rem )) {
     .welcome__container {
-      padding-top: calc(8.875rem + 9.0625 * (100vw - 22.5rem) / 56.25);
+      padding-top: calc(8.875rem + 9 * (100vw - 22.5rem) / 56.25);
     }
 }
 
