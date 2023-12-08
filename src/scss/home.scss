@@ -47,7 +47,6 @@
       bottom: -274px;
       left: 50%;
       transform: translate(-50%, 0);
-      z-index: 1;
     }
   }
   &__content {
@@ -283,19 +282,19 @@
   background: linear-gradient(to right, #022335, #0c373d);
   @include adaptiveValue("padding-top", 124, 55);
   @include adaptiveValue("padding-bottom", 124, 55);
+
   &__container {
   }
   &__title {
+    position: relative;
     &:not(:last-child) {
-      margin-bottom: toRem(58);
+      @include adaptiveValue("margin-bottom", 58, 28);
     }
   }
   &__body {
   }
 }
-.title {
-}
-.body {
+.body-reason {
   display: flex;
   flex-direction: column;
   gap: 20px;
