@@ -1,6 +1,6 @@
 // Заголовки, общие БЭМ блоки и прочее...
 .title {
-  font-size: toRem(54);
+  @include adaptiveValue("font-size", 54, 30);
   font-style: normal;
   font-weight: 450;
   line-height: normal;

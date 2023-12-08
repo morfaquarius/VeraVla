@@ -216,6 +216,9 @@
     }
   }
   &__button {
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
   }
 }
 .info {
@@ -275,3 +278,89 @@
 }
 
 //====================================================================================================
+
+.reason {
+  background: linear-gradient(to right, #022335, #0c373d);
+  @include adaptiveValue("padding-top", 124, 55);
+  @include adaptiveValue("padding-bottom", 124, 55);
+  &__container {
+  }
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: toRem(58);
+    }
+  }
+  &__body {
+  }
+}
+.title {
+}
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &__row {
+    display: grid;
+    gap: 20px;
+    &_top {
+      grid-template-columns: repeat(4, minmax(232px, 1fr));
+      @media (max-width: em(1050)) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media (max-width: em(550)) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+    &_bottom {
+      grid-template-columns: repeat(3, minmax(232px, 1fr));
+      @media (max-width: em(900)) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media (max-width: em(550)) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  }
+  &__item {
+  }
+}
+.item {
+  height: 100%;
+  border-image-slice: 1;
+  border: 2px solid;
+  border-radius: 20px;
+  border-image: linear-gradient(to right, transparent, #0f6b78, transparent) 1 1;
+  background: linear-gradient(180deg, rgba(0, 224, 255, 0.11) 0%, rgba(0, 224, 255, 0.05) 100%);
+  @include adaptiveValue("padding-top", 35, 17);
+  @include adaptiveValue("padding-bottom", 35, 17);
+  @include adaptiveValue("padding-left", 40, 20);
+  @include adaptiveValue("padding-right", 40, 20);
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    @include adaptiveValue("left", 40, 20);
+    background-color: rgba(3, 225, 255, 0.66);
+    filter: blur(5.5px);
+    width: 41px;
+    height: 10px;
+  }
+  &__icon {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 15, 8);
+    }
+    img {
+      @include adaptiveValue("height", 50, 40);
+      @include adaptiveValue("width", 50, 40);
+    }
+  }
+  &__text {
+    @media (max-width: em(550)) {
+      font-size: toRem(14);
+    }
+  }
+}
+
+//========================================================================================================================================================
