@@ -975,7 +975,6 @@ body::after {
   -webkit-transform: translate(-50%, 0);
       -ms-transform: translate(-50%, 0);
           transform: translate(-50%, 0);
-  z-index: 1;
 }
 
 .welcome__image {
@@ -1232,11 +1231,11 @@ body::after {
   background: linear-gradient(to right, #022335, #0c373d);
 }
 
-.reason__title:not(:last-child) {
-  margin-bottom: 3.625rem;
+.reason__title {
+  position: relative;
 }
 
-.body {
+.body-reason {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1247,18 +1246,18 @@ body::after {
   gap: 20px;
 }
 
-.body__row {
+.body-reason__row {
   display: -ms-grid;
   display: grid;
   gap: 20px;
 }
 
-.body__row_top {
+.body-reason__row_top {
   -ms-grid-columns: (minmax(232px, 1fr))[4];
   grid-template-columns: repeat(4, minmax(232px, 1fr));
 }
 
-.body__row_bottom {
+.body-reason__row_bottom {
   -ms-grid-columns: (minmax(232px, 1fr))[3];
   grid-template-columns: repeat(3, minmax(232px, 1fr));
 }
@@ -1400,6 +1399,10 @@ body::after {
     padding-bottom: 7.75rem;
   }
 
+  .reason__title:not(:last-child) {
+    margin-bottom: 3.625rem;
+  }
+
   .item {
     padding-top: 2.1875rem;
   }
@@ -1451,7 +1454,7 @@ body::after {
 }
 
 @media (max-width: 65.625em) {
-  .body__row_top {
+  .body-reason__row_top {
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1476,7 +1479,7 @@ body::after {
 }
 
 @media (max-width: 56.25em) {
-  .body__row_bottom {
+  .body-reason__row_bottom {
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1505,12 +1508,12 @@ body::after {
 }
 
 @media (max-width: 34.375em) {
-  .body__row_top {
+  .body-reason__row_top {
     -ms-grid-columns: (1fr)[1];
     grid-template-columns: repeat(1, 1fr);
   }
 
-  .body__row_bottom {
+  .body-reason__row_bottom {
     -ms-grid-columns: (1fr)[1];
     grid-template-columns: repeat(1, 1fr);
   }
@@ -1691,6 +1694,10 @@ body::after {
 
   .reason {
     padding-bottom: 3.4375rem;
+  }
+
+  .reason__title:not(:last-child) {
+    margin-bottom: 1.75rem;
   }
 
   .item {
@@ -2004,6 +2011,18 @@ body::after {
 @supports not (padding-bottom: clamp( 3.4375rem , 1.7125rem  +  7.6666666667vw , 7.75rem )) {
     .reason {
       padding-bottom: calc(3.4375rem + 4.3125 * (100vw - 22.5rem) / 56.25);
+    }
+}
+
+@supports (margin-bottom: clamp( 1.75rem , 1rem  +  3.3333333333vw , 3.625rem )) {
+    .reason__title:not(:last-child) {
+      margin-bottom: clamp( 1.75rem , 1rem  +  3.3333333333vw , 3.625rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 1.75rem , 1rem  +  3.3333333333vw , 3.625rem )) {
+    .reason__title:not(:last-child) {
+      margin-bottom: calc(1.75rem + 1.875 * (100vw - 22.5rem) / 56.25);
     }
 }
 
