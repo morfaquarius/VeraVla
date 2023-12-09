@@ -2,19 +2,6 @@
 .welcome {
   @extend %bg-primary1;
   position: relative;
-  &__decor {
-    background: linear-gradient(270deg, rgba(74, 207, 236, 0.21) 0%, #32abc3 53.12%, rgba(74, 197, 236, 0.23) 100%);
-    box-shadow:
-      0px 0px 24px 0px #00e0ff,
-      0px 4px 15px 0px #4ad9ec,
-      0px 3px 15px 0px rgba(0, 224, 255, 0.93);
-    filter: blur(1px);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-  }
   &::before {
     @media (max-width: $tablet) {
       display: none;
@@ -279,7 +266,8 @@
 //====================================================================================================
 
 .reason {
-  background: linear-gradient(to right, #022335, #0c373d);
+  position: relative;
+  @extend %bg-pimary2;
   @include adaptiveValue("padding-top", 124, 55);
   @include adaptiveValue("padding-bottom", 124, 55);
 
@@ -362,4 +350,72 @@
   }
 }
 
+//========================================================================================================================================================
+
+.intelligence {
+  @include adaptiveValue("padding-bottom", 95, 55);
+  @include adaptiveValue("padding-top", 95, 55);
+  @extend %bg-primary1;
+  &__container {
+    position: relative;
+  }
+  &__title {
+    max-width: 776px;
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 64, 32);
+    }
+  }
+  &__body {
+    display: flex;
+    @media (max-width: $tablet) {
+      flex-direction: column;
+    }
+  }
+  &__content {
+    max-width: 624px;
+  }
+  &__list {
+    @include adaptiveValue("padding-bottom", 90, 0);
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  &__item {
+    background: linear-gradient(90deg, rgba(31, 63, 77, 0.54) 0%, rgba(31, 75, 94, 0) 100%);
+    padding: 20px;
+  }
+  &__text {
+    @include adaptiveValue("font-size", 15, 14);
+    line-height: 1.4;
+    position: relative;
+    padding-left: toRem(40);
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: toRem(30);
+      height: toRem(21);
+      z-index: 2;
+      background: url("@img/icons/check.svg") 0 0 no-repeat;
+    }
+  }
+  &__button {
+  }
+  &__image {
+    margin: 0px -30px 20px -30px;
+    mix-blend-mode: lighten;
+
+    @media (min-width: $tablet) {
+      margin: 0;
+      position: absolute;
+      top: 100px;
+      right: -357px;
+    }
+    img {
+      max-width: 100%;
+      box-shadow: 0px 0px 110px 14px #000 inset;
+    }
+  }
+}
 //========================================================================================================================================================
