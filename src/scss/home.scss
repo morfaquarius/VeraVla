@@ -267,11 +267,13 @@
 //====================================================================================================
 
 .reason {
+  @include adaptiveValue("padding-top", 75, 35);
+  @include adaptiveValue("padding-bottom", 95, 55);
+
   position: relative;
   @extend %bg-primary2;
   display: flex;
   align-items: center;
-  padding-bottom: toRem(40);
   &__container {
     height: 100%;
   }

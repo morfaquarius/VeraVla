@@ -41,11 +41,21 @@
   cursor: default;
   text-align: left;
   padding: toRem(17) toRem(17);
-  border-radius: toRem(6);
+  padding-left: 43px;
+  border-radius: 6px;
   background: linear-gradient(286deg, #073447 3.63%, #08262b 90.98%);
   position: relative;
   list-style: none;
-  &::marker {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 23px;
+    left: 17px;
+    background: url("@img/icons/bulb.svg") no-repeat;
+    width: 10px;
+    height: 10px;
+    z-index: 100;
+    filter: drop-shadow(0px 4px 8px rgba(0, 224, 255, 0.56));
   }
   ._spoller-init & {
     cursor: pointer;
@@ -103,7 +113,8 @@
 }
 // Контент спойлера
 .spollers__body {
-  padding: toRem(30) toRem(43);
+  padding: toRem(30) 0;
+  padding-left: toRem(43);
   &_empty {
     padding: 0;
   }
