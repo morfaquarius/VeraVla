@@ -6,7 +6,7 @@
 @import "base/popup";
 
 //Стили спойлеров
-// @import "base/spollers";
+@import "base/spollers";
 
 // Стили табов
 // @import "base/tabs";
@@ -64,7 +64,7 @@
 %bg-primary1 {
   background: linear-gradient(286deg, #022335 3.63%, #043a41 90.98%);
 }
-%bg-pimary2 {
+%bg-primary2 {
   background: linear-gradient(to right, #022335, #0c373d);
 }
 

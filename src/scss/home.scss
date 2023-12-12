@@ -96,20 +96,24 @@
         position: absolute;
         border-radius: 50%;
         left: 50%;
-        transform: translate(-50%, 0%);
         width: 10px;
         height: 10px;
         background-color: #4abcec;
         box-shadow: (0px 4px 10px rgba(74, 217, 236, 0.75));
         transition: all 0.4s;
+        animation: moveUpDown 2s ease infinite;
       }
     }
-    &:active {
-      div {
-        &::after {
-          transform: translate(-50%, 130%);
-        }
-      }
+  }
+  @keyframes moveUpDown {
+    0% {
+      transform: translate(-50%, 0%);
+    }
+    50% {
+      transform: translate(-50%, 130%);
+    }
+    100% {
+      transform: translate(-50%, 0%);
     }
   }
   &__consultation {
@@ -202,9 +206,6 @@
     }
   }
   &__button {
-    @media (max-width: $mobile) {
-      width: 100%;
-    }
   }
 }
 .info {
@@ -267,11 +268,12 @@
 
 .reason {
   position: relative;
-  @extend %bg-pimary2;
-  @include adaptiveValue("padding-top", 124, 55);
-  @include adaptiveValue("padding-bottom", 124, 55);
-
+  @extend %bg-primary2;
+  display: flex;
+  align-items: center;
+  padding-bottom: toRem(40);
   &__container {
+    height: 100%;
   }
   &__title {
     position: relative;
@@ -353,6 +355,8 @@
 //========================================================================================================================================================
 
 .intelligence {
+  position: relative;
+
   @include adaptiveValue("padding-bottom", 95, 55);
   @include adaptiveValue("padding-top", 95, 55);
   @extend %bg-primary1;
@@ -418,4 +422,33 @@
     }
   }
 }
+//========================================================================================================================================================
+.learn {
+  @include adaptiveValue("padding-bottom", 95, 55);
+  @include adaptiveValue("padding-top", 95, 55);
+  @extend %bg-primary2;
+  &__container {
+  }
+  &__header {
+    &:not(:last-child) {
+      margin-bottom: toRem(27);
+    }
+  }
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: toRem(20);
+    }
+  }
+  &__text {
+    font-size: toRem(18);
+  }
+  &__spollers {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 60, 40);
+    }
+  }
+  &__button {
+  }
+}
+
 //========================================================================================================================================================

@@ -4,49 +4,66 @@
 // Блок со спойлерами
 .spollers {
   display: grid;
-  gap: 15px;
+  gap: 20px;
+  &__title {
+    font-size: toRem(20);
+    font-weight: 700;
+    line-height: 1.05; /* 105% */
+  }
+  &__status {
+    color: #08262b;
+    font-size: toRem(13);
+    background: #00e0ff;
+    padding: toRem(0) toRem(4);
+    line-height: 1.61; /* 161.538% */
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  &__duration {
+    color: #08b1b9;
+    font-size: toRem(15);
+    line-height: math.div(21, 15);
+  }
+  &__info {
+    display: flex;
+    column-gap: 15px;
+    row-gap: 7px;
+    flex-wrap: wrap;
+    padding-right: toRem(50);
+  }
 }
 // Спойлер
 .spollers__item {
-  font-size: toRem(20);
 }
 // Заголовок спойлера
-.spollers__title {
+.spollers__name {
   width: 100%;
   cursor: default;
   text-align: left;
-  border: 1px solid #eee;
-  padding: toRem(10) toRem(15);
-  border-radius: toRem(5);
+  padding: toRem(17) toRem(17);
+  border-radius: toRem(6);
+  background: linear-gradient(286deg, #073447 3.63%, #08262b 90.98%);
   position: relative;
   list-style: none;
   &::marker {
   }
   ._spoller-init & {
     cursor: pointer;
-    &::before,
+    position: relative;
+
     &::after {
       content: "";
       position: absolute;
-      right: 10px;
-      top: 50%;
-      background-color: #000;
-      height: 2px;
-      width: 15px;
+      right: 15px;
+      top: 12px;
+      background: url("@img/icons/select.svg") 0 0 no-repeat;
+      height: 32px;
+      width: 32px;
       transition: transform 0.5s ease 0s;
     }
-    &::before {
-      transform: translate(-75%, -50%) rotate(40deg);
-    }
-    &::after {
-      transform: translate(0, -50%) rotate(-40deg);
-    }
     &._spoller-active {
-      &::before {
-        transform: translateX(-75%) rotate(-40deg);
-      }
       &::after {
-        transform: rotate(40deg);
+        transform: rotate(180deg);
       }
     }
     /*
@@ -86,7 +103,54 @@
 }
 // Контент спойлера
 .spollers__body {
-  padding: toRem(20);
-  border-radius: toRem(5);
-  border: 1px solid #eee;
+  padding: toRem(30) toRem(43);
+  &_empty {
+    padding: 0;
+  }
+}
+
+.body-spollers {
+  &__item {
+    position: relative;
+    &:not(:last-child) {
+      margin-bottom: toRem(40);
+    }
+    &::before {
+      position: absolute;
+      left: -16px;
+      top: 0;
+      transform: translate(-100%, 0);
+      content: counter(list-counter);
+      counter-increment: list-counter;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 27px;
+      height: 27px;
+      font-weight: 700;
+      font-size: toRem(14);
+      line-height: 1.5;
+      background-color: #4abcec;
+      color: #08262b;
+
+      border-radius: 50%;
+    }
+  }
+  &__title {
+    color: #4abcec;
+    font-size: toRem(16);
+    font-weight: 700;
+    line-height: 1.31;
+    &:not(:last-child) {
+      margin-bottom: toRem(14);
+    }
+  }
+  &__list {
+    list-style: none;
+    counter-reset: list-counter;
+  }
+  &__text {
+    font-size: toRem(16);
+    line-height: 1.31; /* 131.25% */
+  }
 }
