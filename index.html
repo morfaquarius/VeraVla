@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231209224023">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231212213809">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -119,7 +119,7 @@
 						<div class="welcome__image">
 							<picture><source srcset="img/welcome/01.webp" type="image/webp"><img src="img/welcome/01.png" alt="neuron"></picture>
 						</div>
-						<button data-goto="" type="button" class="welcome__scroll">
+						<button data-goto-speed="700" data-goto=".reason" type="button" class="welcome__scroll">
 							<p>Листайте вниз</p>
 							<div></div>
 						</button>
@@ -131,7 +131,7 @@
 				</div>
 				<div class="decor-line"></div>
 			</section>
-			<section class="reason">
+			<section data-fullscreen class="reason">
 				<div class="reason__container">
 					<h2 class="reason__title title"><span>7 причин</span> почему именно мы?</h2>
 					<div class="reason__body body-reason">
@@ -212,7 +212,7 @@
 				</div>
 				<div class="decor-line"></div>
 			</section>
-			<section class="intelligence">
+			<section data-fullscreen class="intelligence">
 				<div class="intelligence__container">
 					<h2 class="intelligence__title title"><span>Искусственный интеллект</span>- это круто?</h2>
 					<div class="intelligence__body">
@@ -247,14 +247,150 @@
 									</p>
 								</li>
 							</ul>
-							<a data-da=".intelligence__container, 991.98" href="#" class="intelligence__button button">Записаться на
-								ознакомительный вебинар</a>
+							<button data-popup="#popupSignup" data-da=".intelligence__container, 991.98" class="intelligence__button button">Записаться на
+								ознакомительный вебинар</button>
 						</div>
 						<div class="intelligence__image">
 							<picture><source srcset="img/intelligence/ai-img.webp" type="image/webp"><img src="img/intelligence/ai-img.png" alt="ai"></picture>
 						</div>
 					</div>
 				</div>
+				<div class="decor-line"></div>
+			</section>
+			<section class="learn">
+				<div class="learn__container">
+					<div class="learn__header">
+						<h2 class="learn__title title"><span>Что я узнаю</span> из этих курсов? </h2>
+						<p class="learn__text">Полностью весь курс состоит из 3 частей</p>
+					</div>
+					<div data-spollers class="learn__spollers spollers">
+						<details class="spollers__item">
+							<summary class="spollers__name">
+								<div class="spollers__info">
+
+									<span class="spollers__title">AI - Junior Level.</span>
+									<span class="spollers__duration">Продолжительность 1.5 года.</span>
+								</div>
+							</summary>
+							<div class="spollers__body body-spollers">
+								<ol class="body-spollers__list">
+									<li class="body-spollers__item">
+										<p class="body-spollers__title">Введение. </p>
+										<p class="body-spollers__text">В этой секции, мы познакомимся с историей человека, который
+											переквалифицировался в специалиста по искусственному интеллекту и отвечаем на вопрос: "Стоит ли
+											это того, чтобы потратить 2 года на изучение искусственного интеллекта?" Также, мы разберём уроки,
+											усвоенные специалистами, прошедших путь от младших до главных специалистов.</p>
+									</li>
+									<li class="body-spollers__item">
+										<p class="body-spollers__title">Введение в программирование. </p>
+										<p class="body-spollers__text">Эта секция начинается с объяснения понятий проблемы, сути и целей
+											искусственного интеллекта. Ты узнаешь в чем разница между данными и информацией. А также что такое
+											качество информации. Мы разберём, что такое алгоритмы, компьютерные программы и язык
+											программирования Python, и начнём работать в интегрированной среде разработки для языка Python.
+											Далее мы поймем суть переменных их свойства и типы. Именно с этой секции ты начнёшь писать свои
+											первые программные коды на языке программирования Python. Мы изучим все аспекты этого
+											удивительного языка. Далее мы разберём такие библиотеки как Numpy, Pandas и Matplotlib. В этой
+											секции ты познакомишься со средой разработки Jupyter Notebook. </p>
+									</li>
+									<li class="body-spollers__item">
+										<p class="body-spollers__title">Введение в искусственный интеллект. </p>
+										<p class="body-spollers__text">Эта секция показывает нам, разницу между линейным и нелинейным
+											программированием. Описывает процесс получение знаний. Также, ты узнаешь, в чем разница между AI,
+											machine learning и deep learning. Также обсудим виды искусственного интеллекта, его применения и
+											примеры.</p>
+									</li>
+									<li class="body-spollers__item">
+										<p class="body-spollers__title">Алгоритм machine learning. </p>
+										<p class="body-spollers__text">В этих секциях, мы подробно разберём работу алгоритмов machine
+											learning. И
+											ты создашь очень простую, но уже свою модель искусственного интеллекта. Также ты научишься
+											оценивать точность моделей. В этой секции мы подробно начнём разбирать одну из библиотек
+											искусственного интеллекта scikit learn. Здесь же мы разберём другую среду разработки, которая
+											называется spyder.</p>
+									</li>
+									<li class="body-spollers__item">
+										<p class="body-spollers__title">Процесс разработки модели искусственного интеллекта и инженерия
+											данных.
+										</p>
+										<p class="body-spollers__text">Здесь мы подробно обсудим весь процесс разработки модели
+											искусственного
+											интеллекта. Также мы начнём изучение анализа данных и их обработки для обучения искусственного
+											интеллекта. В этой секции я научу тебя практическим примерам анализа и обработки данных от А до Я.
+										</p>
+									</li>
+									<li class="body-spollers__item">
+										<p class="body-spollers__title">Отбор фичей. </p>
+										<p class="body-spollers__text">В этой секции из всех данных, что у нас есть, мы научимся отбирать
+											только
+											те, что нам нужны для обучения искусственного интеллекта.</p>
+									</li>
+									<li class="body-spollers__item">
+										<p class="body-spollers__title">Чек лист почти для всех проектов искусственного интеллекта. </p>
+										<p class="body-spollers__text">В этой секции я дам чек лист действий для построения end-to-end
+											проектов
+											искусственного интеллекта.</p>
+									</li>
+									<li class="body-spollers__item">
+										<p class="body-spollers__title">Практические занятия. </p>
+										<p class="body-spollers__text">На практических занятиях мы научим наши модели искусственного
+											интеллекта
+											следующим вещам: предсказывать нажатие на рекламу пользователем в фейсбуке; определять рак груди;
+											предсказывать ухода в отставку клиентов банка; определять наличие кифоза у детей; определять
+											положительные и отрицательные отзывы yelp; определять положительные и отрицательные отзывы на
+											амазоне; определять спам письма; предсказывать наличие болезней сердца у пациентов; определять
+											износ деталей на токарном станке.</p>
+									</li>
+									<li class="body-spollers__item">
+										<p class="body-spollers__title">Deep learning: Искусственные нейронные сети. </p>
+										<p class="body-spollers__text">В этой секции ты узнаешь, что такое deep learning и как это работает,
+											также ты поймешь, что такое нейроны и как нейроные сети обучаются. Мы детально разберём все
+											процессы, связанные с нейронными сетями. Ты также познакомишься с библиотекой keras, фреймворком
+											tensorflow и средой разработки google colab.</p>
+									</li>
+									<li class="body-spollers__item">
+										<p class="body-spollers__title">Deep learning: конволюционные нейронные сети.</p>
+										<p class="body-spollers__text">Эта секция посвящена конволюционным нейронным сетям, которые
+											применяются в
+											компьютерном зрении. Мы детально разберём как искусственный интеллект распознает те или иные вещи,
+											например, машины или яблоки.</p>
+									</li>
+									<li class="body-spollers__item">
+										<p class="body-spollers__title">Практические занятия.</p>
+										<p class="body-spollers__text">На этих занятиях ты разработаешь свои нейронные сети, которые смогут:
+											предсказывать цены автомобилей; предсказывать выходную мощность электростанций (кейс виртуальных
+											сенсоров); предсказывать поломки насоса на основе данных из сенсоров насоса; распознавать
+											рукописные цифры, распознавать элементы одежды, распознавать различные объекты; распознавать
+											повреждённые автомобили; распознавать уличные дорожные знаки для беспилотных автомобилей.</p>
+									</li>
+								</ol>
+							</div>
+						</details>
+						<details class="spollers__item">
+							<summary class="spollers__name">
+								<div class="spollers__info">
+									<span class="spollers__title">AI - Middle Level.</span>
+									<span class="spollers__duration">Продолжительность 1.5 года.</span>
+									<span class="spollers__status">В разработке</span>
+								</div>
+							</summary>
+							<div class="spollers__body spollers__body_empty"></div>
+						</details>
+						<details class="spollers__item">
+							<summary class="spollers__name">
+								<div class="spollers__info">
+
+									<span class="spollers__title">AI - Senior Level.</span>
+									<span class="spollers__duration">Продолжительность 2 года.</span>
+									<span class="spollers__status">В разработке</span>
+								</div>
+							</summary>
+							<div class="spollers__body spollers__body_empty"></div>
+						</details>
+					</div>
+					<button data-popup="#popupSignup" class="learn__button button">Записаться на
+						ознакомительный вебинар</button>
+				</div>
+				<div class="decor-line"></div>
 			</section>
 		</main>
 		<footer class="footer">
@@ -262,7 +398,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20231209224023"></script>
+	<script src="js/app.min.js?_v=20231212213809"></script>
 </body>
 
 </html>
