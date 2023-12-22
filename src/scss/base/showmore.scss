@@ -1,17 +1,28 @@
 [data-showmore] {
 }
 [data-showmore-content] {
+  background: linear-gradient(180deg, #fff 65.96%, rgba(105, 104, 104, 0) 100%);
+  background-clip: text;
+  color: transparent;
+  font-weight: 400;
 }
 [data-showmore-button] {
-	span {
-		&:last-child {
-			display: none;
-		}
-		._showmore-active & {
-			display: none;
-			&:last-child {
-				display: block;
-			}
-		}
-	}
+  span {
+    &:last-child {
+      display: none;
+    }
+    ._showmore-active & {
+      display: none;
+      &:last-child {
+        display: block;
+      }
+    }
+  }
+}
+._showmore-active {
+  [data-showmore-content] {
+    background: none;
+    background-clip: border-box;
+    color: #fff;
+  }
 }

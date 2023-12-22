@@ -29,9 +29,6 @@
       transform: translate(-60%, -70%);
       z-index: -1;
     }
-    img {
-      @include adaptiveValue("width", 287, 195);
-    }
   }
   &__decor {
     position: absolute;

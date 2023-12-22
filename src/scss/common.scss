@@ -27,3 +27,8 @@
   height: 3px;
   z-index: 100;
 }
+.logo {
+  img {
+    @include adaptiveValue("width", 287, 195);
+  }
+}

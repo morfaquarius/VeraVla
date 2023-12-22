@@ -16,8 +16,8 @@
     background: url("@img/welcome/decor.png") 0 0 no-repeat;
   }
   &__container {
-    @include adaptiveValue("padding-top", 286, 142);
-    @include adaptiveValue("padding-bottom", 165, 60);
+    @include adaptiveValue("padding-top", 266, 142);
+    padding-bottom: toRem(70);
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -66,7 +66,7 @@
     }
     position: absolute;
     left: 50%;
-    @include adaptiveValue("bottom", 88, 38, 0, 1200, 991.98);
+    bottom: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -120,20 +120,19 @@
     position: absolute;
     top: 152px;
     left: 68px;
-    writing-mode: vertical-lr;
     transform: rotate(-180deg);
     color: #00e0ff;
     font-size: toRem(10);
     font-weight: 500;
     letter-spacing: 3.6px;
     text-transform: uppercase;
+    writing-mode: vertical-lr;
     display: flex;
+    flex-direction: row;
     align-items: center;
     white-space: nowrap;
     gap: 63px;
-    p {
-      writing-mode: vertical-lr;
-    }
+
     @media (max-width: em(1400)) {
       left: auto;
       right: 68px;
@@ -429,6 +428,7 @@
   @include adaptiveValue("padding-bottom", 95, 55);
   @include adaptiveValue("padding-top", 95, 55);
   @extend %bg-primary2;
+  position: relative;
   &__container {
   }
   &__header {
@@ -453,4 +453,143 @@
   }
 }
 
+//========================================================================================================================================================
+.vacancies {
+  @include adaptiveValue("padding-bottom", 75, 55);
+  @include adaptiveValue("padding-top", 75, 55);
+  @extend %bg-primary1;
+  position: relative;
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 50, 30);
+    }
+  }
+  &__title {
+  }
+  &__button {
+    color: #4abcec;
+    font-size: toRem(12);
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 0 toRem(23);
+    @include adaptiveValue("padding-top", 21.5, 6);
+    @include adaptiveValue("padding-bottom", 21.5, 6);
+    border-radius: 9px;
+    border: 1px solid #00e0ff;
+    transition: all 0.3s;
+    text-align: center;
+    @media (any-hover: hover) {
+      &:hover {
+        box-shadow: 0px 7px 20px -7px #00e0ff;
+      }
+    }
+  }
+  &__block {
+    position: relative;
+    @media (max-width: $tablet) {
+      &:not(:last-child) {
+        margin-bottom: toRem(24);
+      }
+    }
+  }
+  &__slider {
+  }
+  &__wrapper {
+  }
+  &__slide {
+  }
+}
+
+.slide-vacancies {
+  &__image--ibg {
+    padding-bottom: percent(236, 387);
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 29, 20);
+    }
+    img {
+      border-radius: 20px;
+      border: 2px solid #49b9e8;
+      opacity: 0.6;
+    }
+  }
+  &__title {
+    font-size: toRem(16);
+    font-weight: 700;
+    line-height: 1.31;
+    display: block;
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 18, 12);
+    }
+  }
+  &__content {
+  }
+  &__text {
+    line-height: 1.4;
+    align-items: baseline; /* Выравниваем текст */
+    display: flex; /* Включаем флексы */
+    &::before {
+      content: ""; /* Выводим линию */
+      border-bottom: 1px dashed #fff; /* Параметры линии */
+      flex-grow: 1; /* Линия занимает всё доступное пространство */
+      order: 2; /* Выводим вторым */
+      margin: 0 4px; /* Расстояние от текста */
+    }
+    .value {
+      order: 3;
+    }
+  }
+  &__more {
+    color: #4abcec;
+    font-size: toRem(12);
+    line-height: 1.75; /* 175% */
+    text-decoration-line: underline;
+  }
+}
+
+.swiper-button-next {
+  @include adaptiveValue("right", 20, -20);
+  transform: rotate(180deg);
+  left: auto;
+}
+
+.swiper-button-prev {
+  @include adaptiveValue("left", 20, -20);
+  right: auto;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute;
+  @include adaptiveValue("top", 87, 65, 0, 1200, 992);
+  @media (max-width: $tablet) {
+    @include adaptiveValue("top", 110, 80, 0, 991, 768);
+  }
+  @media (max-width: $mobile) {
+    @include adaptiveValue("top", 190, 70, 0, 767, 360);
+  }
+  z-index: 10;
+  cursor: pointer;
+  border-radius: 62px;
+  background: linear-gradient(180deg, rgba(3, 225, 255, 0.66) 0%, #13cdc2 100%);
+  @include adaptiveValue("width", 62, 42);
+  @include adaptiveValue("height", 62, 42);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+  @media (any-hover: hover) {
+    &:hover {
+      box-shadow: 0px 7px 20px -7px #00e0ff;
+    }
+  }
+}
 //========================================================================================================================================================
