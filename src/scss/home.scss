@@ -615,6 +615,9 @@
   &__active {
     @include adaptiveValue("bottom", 220, 220);
   }
+  @media (max-width: em(1700)) {
+    left: 68px;
+  }
   @media (max-width: em(1500)) {
     left: auto;
     right: 68px;
@@ -655,7 +658,7 @@
   }
 }
 .vacancies__container_wide--scroll {
-  max-width: toRem(1695);
-  padding: 60px;
+  max-width: toRem(1570);
+  padding: 0;
   position: relative;
 }
