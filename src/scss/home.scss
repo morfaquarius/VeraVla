@@ -613,7 +613,7 @@
   transition: all 0.3s;
   z-index: 1000;
 
-  @media (max-width: em(1400)) {
+  @media (max-width: em(1500)) {
     left: auto;
     right: 68px;
     p {
@@ -627,12 +627,8 @@
   }
   &__img {
     img {
-      width: 40px;
-      height: 40px;
-      @media (max-width: $mobileSmall) {
-        width: 24px;
-        height: 24px;
-      }
+      @include adaptiveValue("width", 40, 20);
+      @include adaptiveValue("height", 40, 20);
     }
     position: relative;
     transform: rotate(-180deg);
@@ -643,12 +639,8 @@
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
-      width: 100px;
-      height: 100px;
-      @media (max-width: $mobileSmall) {
-        width: 63px;
-        height: 63px;
-      }
+      @include adaptiveValue("width", 100, 52);
+      @include adaptiveValue("height", 100, 52);
       border-radius: 50%;
       z-index: -1;
       background: linear-gradient(180deg, rgba(3, 225, 255, 0.66) 0%, #13cdc2 100%);

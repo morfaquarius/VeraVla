@@ -155,7 +155,7 @@ class ScrollWatcher {
     if (targetElement.dataset.watch === 'scroll-up') {
     }
     if (entry.isIntersecting) {
-      scrollup.style.bottom = '150px';
+      scrollup.style.bottom = '210px';
     } else {
       scrollup.style.bottom = '-100%';
     }
