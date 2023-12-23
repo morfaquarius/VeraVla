@@ -12,7 +12,7 @@
 */
 
 // Включить/выключить FLS (Full Logging System) (в работе)
-window['FLS'] = false;
+window['FLS'] = true;
 
 // Подключение основного файла стилей
 import "../scss/style.scss";
@@ -185,7 +185,7 @@ import './files/forms/datepicker.js'
 // Наблюдатель за объектами с атрибутом data-watch
 // Документация: https://template.fls.guru/template-docs/modul-nabljudatel-za-poyavleniem-elementa-pri-skrolle.html
 // Сниппет(HTML):
-// import './libs/watcher.js'
+import './libs/watcher.js'
 
 // Модуль поэкранной прокрутки
 // Документация: https://template.fls.guru/template-docs/modul-poekrannoj-prokrutki-stranicy-fullpage.html

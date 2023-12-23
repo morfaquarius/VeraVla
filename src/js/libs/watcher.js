@@ -149,17 +149,16 @@ class ScrollWatcher {
 			}
 		}));
 
-    /*
+    
+    let scrollup = document.querySelector('.scroll-up');
     // Выбираем нужные объекты
-    if (targetElement.dataset.watch === 'some value') {
-    // пишем уникальную специфику
+    if (targetElement.dataset.watch === 'scroll-up') {
     }
     if (entry.isIntersecting) {
-    //Видим объект
+      scrollup.style.bottom = '150px';
     } else {
-    //Не видим объект
+      scrollup.style.bottom = '-100%';
     }
-    */
 	}
 }
 // Запускаем и добавляем в объект модулей

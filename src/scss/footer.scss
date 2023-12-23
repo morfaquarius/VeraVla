@@ -45,6 +45,7 @@
     gap: 7px;
     color: #fff;
     text-decoration-line: none;
+    transition: all 0.3s;
     @media (any-hover: hover) {
       &:hover {
         color: #4abcec;
