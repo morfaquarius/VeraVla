@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231223003041">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231223210205">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +17,7 @@
 		<header class="header">
 			<div class="header__container">
 				<div class="header__logo logo">
-					<a href="#" class="header__link">
+					<a href="index.html" class="header__link">
 						<img src="img/header/logo.svg" alt="logo">
 					</a>
 				</div>
@@ -392,7 +392,13 @@
 				</div>
 				<div class="decor-line"></div>
 			</section>
-			<section class="vacancies">
+			<button data-goto=".welcome" type="button" class="scroll-up">
+				<div class="scroll-up__img">
+					<img src="img/icons/arrow-scroll-up.svg" alt="scroll-up">
+				</div>
+				<p>Подняться вверх</p>
+			</button>
+			<section data-watch class="vacancies">
 				<div class="vacancies__container">
 					<div class="vacancies__header">
 						<h2 class="vacancies__title title">Вакансии</h2>
@@ -647,7 +653,7 @@
 		</main>
 		<footer class="footer">
 			<div class="footer__container">
-				<a class="footer__logo logo">
+				<a href="index.html" class="footer__logo logo">
 					<img src="img/header/logo.svg" alt="logo">
 				</a>
 				<div class="footer__content">
@@ -690,7 +696,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20231223003041"></script>
+	<script src="js/app.min.js?_v=20231223210205"></script>
 </body>
 
 </html>
