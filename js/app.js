@@ -7625,7 +7625,7 @@
                 }));
                 let scrollup = document.querySelector(".scroll-up");
                 if (targetElement.dataset.watch === "scroll-up") ;
-                if (entry.isIntersecting) scrollup.style.bottom = "210px"; else scrollup.style.bottom = "-100%";
+                if (entry.isIntersecting) scrollup.style.bottom = "220px"; else scrollup.style.bottom = "-100%";
             }
         }
         flsModules.watcher = new ScrollWatcher({});

@@ -1893,7 +1893,7 @@ body::after {
 .scroll-up {
   position: fixed;
   bottom: -100%;
-  left: 68px;
+  right: auto;
   -webkit-transform: rotate(-180deg);
       -ms-transform: rotate(-180deg);
           transform: rotate(-180deg);
@@ -1945,6 +1945,12 @@ body::after {
           filter: drop-shadow(0px 7px 20px #00e0ff);
   -webkit-animation: pulseMobile 2.5s infinite ease-in-out;
           animation: pulseMobile 2.5s infinite ease-in-out;
+}
+
+.vacancies__container_wide--scroll {
+  max-width: 98.4375rem;
+  padding: 60px;
+  position: relative;
 }
 
 .swiper {
@@ -2262,6 +2268,10 @@ body::after {
   .swiper-button-next,
   .swiper-button-prev {
     height: 3.875rem;
+  }
+
+  .scroll-up__active {
+    bottom: 13.75rem;
   }
 
   .scroll-up__img img {
@@ -2718,6 +2728,10 @@ body::after {
   .swiper-button-next,
   .swiper-button-prev {
     height: 2.625rem;
+  }
+
+  .scroll-up__active {
+    bottom: 13.75rem;
   }
 
   .scroll-up__img img {
@@ -3391,6 +3405,18 @@ body::after {
     .swiper-button-next,
     .swiper-button-prev {
       height: calc(2.625rem + 1.25 * (100vw - 22.5rem) / 56.25);
+    }
+}
+
+@supports (bottom: clamp( 13.75rem , 13.75rem  +  0vw , 13.75rem )) {
+    .scroll-up__active {
+      bottom: clamp( 13.75rem , 13.75rem  +  0vw , 13.75rem );
+    }
+}
+
+@supports not (bottom: clamp( 13.75rem , 13.75rem  +  0vw , 13.75rem )) {
+    .scroll-up__active {
+      bottom: calc(13.75rem + 0 * (100vw - 22.5rem) / 56.25);
     }
 }
 
