@@ -597,7 +597,7 @@
 .scroll-up {
   position: fixed;
   bottom: -100%;
-  left: 68px;
+  right: auto;
   transform: rotate(-180deg);
   color: #00e0ff;
   font-size: toRem(10);
@@ -612,7 +612,9 @@
   gap: 63px;
   transition: all 0.3s;
   z-index: 1000;
-
+  &__active {
+    @include adaptiveValue("bottom", 220, 220);
+  }
   @media (max-width: em(1500)) {
     left: auto;
     right: 68px;
@@ -651,4 +653,9 @@
       }
     }
   }
+}
+.vacancies__container_wide--scroll {
+  max-width: toRem(1575);
+  padding: 60px;
+  position: relative;
 }
